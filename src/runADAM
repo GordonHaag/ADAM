@@ -1,0 +1,2 @@
+lxterminal -e "bash -c \"cd ~/ADAM/src; sudo python adam.py; ~/ADAM/src/runADAMshim"\"
+

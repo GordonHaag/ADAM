@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ADAM
+Name[en_GB]=ADAM
+GenericName=ADAM
+GenericName[en_GB]=ADAM
+Comment=ADAM- A Documentation Machine
+Comment[en_GB]=ADAM- A Documentation Machine
+TryExec=/home/pi/ADAM/src/runADAM
+Exec=/home/pi/ADAM/src/runADAM
+Icon=lxADAM
+Type=Application
+StartupNotify=true
+Categories=GTK;Utility;ADAMEmulator;
