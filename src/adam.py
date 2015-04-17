@@ -38,7 +38,9 @@ def acknowledged_exit(message):
 l = [d for d in os.listdir('/media') if d != 'SETTINGS']
 
 if len(l) == 1:  # One USB stick is mounted, continue
-    d = '/media/'+l[0]
+    d = os.path.dirname('/media/'+l[0]+'/ADAM/') # files will be saved to /media/usbkey/ADAM/
+    if not os.path.exists(d): # Does the path exist?
+        os.makedirs(d) # If it doesn't, create it.
     os.chdir(d)  # change directory to USB stick
     print "Photos will be written to USB device at " + os.getcwd()
 
@@ -48,7 +50,7 @@ elif len(l) > 1:  # More than one USB stick is mounted, exit with error
 elif len(l) < 1:  # No USB stick is mounted, exit with error
     acknowledged_exit("Please insert a USB device")
 
-# get a list of files that match our patter of N.jpg, where N is an integer
+# get a list of files that match our pattern of N.jpg, where N is an integer
 l = [int((p[:-4])) for p in os.listdir(d) if p[-4:] == '.jpg' and
      str(int(p[:-4])) == p[:-4]]
 
